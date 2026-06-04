@@ -1,10 +1,15 @@
 import React from 'react'
+import {ProductType} from '@/types/product'
 
-function ProductCard({props}) {
+type ProductCardType = {
+  product: ProductType
+}
+
+function ProductCard({product} : ProductCardType) {
   return (
     <div>
           <div
-            key={props.id}
+            
             className="
               bg-white
               p-4
@@ -19,8 +24,8 @@ function ProductCard({props}) {
             "
           >
             <img
-              src={props.image}
-              alt={props.name}
+              src={product.image}
+              alt={product.name}
               className="
                 w-full
                 h-104
@@ -30,11 +35,11 @@ function ProductCard({props}) {
             />
 
             <h2 className="font-semibold text-lg mt-4 min-h-[64px]">
-              {props.name}
+              {product.name}
             </h2>
 
             <p className="mt-2 text-2xl font-bold">
-              ₹{props.price}
+              ₹{product.price}
             </p>
 
             <button
